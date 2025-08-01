@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Brayden's Latest Video</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <style>
+    body { background: #111; color: white; font-family: sans-serif; text-align: center; }
+    iframe { width: 90%; max-width: 720px; height: 405px; margin-top: 2rem; border: none; }
+  </style>
+</head>
+<body>
+
+  <h1>🎬 Brayden's Latest YouTube Video</h1>
+  <div id="videoContainer">
+    <p>Loading video...</p>
+  </div>
+
+  <script>
+    const API_KEY = 'AIzaSyDm86yXxfVr9UPwNTSRP7YHreNInExWKE0'; // 🔑 paste your API key here
+    const CHANNEL_ID = 'UCMMYTsF_ery05QjdEJO4-wA'; // 📺 paste your channel ID here
+
+    async function loadLatestVideo() {
+      const apiUrl = `https://www.googleapis.com/youtube/v3/search?key=${API_KEY}&channelId=${CHANNEL_ID}&part=snippet,id&order=date&maxResults=1`;
+
+      try {
+        const res = await fetch(apiUrl);
+        const data = await res.json();
+        const latest = data.items[0];
+        const videoId = latest.id.videoId;
+
+        document.getElementById('videoContainer').innerHTML = `
+          <iframe 
+            src="https://www.youtube.com/embed/${videoId}" 
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+            allowfullscreen>
+          </iframe>
+        `;
+      } catch (err) {
+        document.getElementById('videoContainer').innerHTML = `<p>Failed to load video.</p>`;
+        console.error(err);
+      }
+    }
+
+    loadLatestVideo();
+  </script>
+
+</body>
+</html>
