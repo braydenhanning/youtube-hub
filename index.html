@@ -1,24 +1,97 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Brayden's Latest Video</title>
+  <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Brayden's Latest YouTube Video</title>
   <style>
-    body { background: #111; color: white; font-family: sans-serif; text-align: center; }
-    iframe { width: 90%; max-width: 720px; height: 405px; margin-top: 2rem; border: none; }
+    :root {
+      --bg: #0f0f0f;
+      --text: #ffffff;
+      --accent: #ff3c3c;
+      --card-bg: #1a1a1a;
+    }
+
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    header {
+      padding: 2rem 1rem;
+      text-align: center;
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 2.5rem;
+    }
+
+    header p {
+      margin: 0.5rem 0;
+      font-size: 1.2rem;
+      opacity: 0.8;
+    }
+
+    .video-section {
+      background: var(--card-bg);
+      border-radius: 12px;
+      padding: 2rem 1rem;
+      width: 90%;
+      max-width: 800px;
+      box-shadow: 0 0 10px rgba(255, 255, 255, 0.05);
+    }
+
+    .video-section h2 {
+      margin-top: 0;
+      color: var(--accent);
+      font-size: 1.5rem;
+    }
+
+    iframe {
+      width: 100%;
+      height: 450px;
+      border: none;
+      border-radius: 8px;
+      margin-top: 1rem;
+    }
+
+    footer {
+      margin-top: 4rem;
+      padding: 2rem;
+      font-size: 0.9rem;
+      color: #aaa;
+      text-align: center;
+    }
   </style>
 </head>
 <body>
 
-  <h1>🎬 Brayden's Latest YouTube Video</h1>
-  <div id="videoContainer">
-    <p>Loading video...</p>
+  <header>
+    <h1>🎬 Brayden's Video Hub</h1>
+    <p>Comedic reviews, gaming chaos, and the stuff nobody asked for.</p>
+  </header>
+
+  <div class="video-section">
+    <h2>Latest Video</h2>
+    <div id="videoContainer">
+      <p>Loading video...</p>
+    </div>
   </div>
 
+  <footer>
+    © 2025 Brayden • Built with JavaScript • Hosted on GitHub Pages
+  </footer>
+
   <script>
-    const API_KEY = 'AIzaSyDm86yXxfVr9UPwNTSRP7YHreNInExWKE0'; // 🔑 paste your API key here
-    const CHANNEL_ID = 'UCMMYTsF_ery05QjdEJO4-wA'; // 📺 paste your channel ID here
+    const API_KEY = 'AIzaSyDm86yXxfVr9UPwNTSRP7YHreNInExWKE0';
+    const CHANNEL_ID = 'UCMMYTsF_ery05QjdEJO4-wA';
 
     async function loadLatestVideo() {
       const apiUrl = `https://www.googleapis.com/youtube/v3/search?key=${API_KEY}&channelId=${CHANNEL_ID}&part=snippet,id&order=date&maxResults=1`;
