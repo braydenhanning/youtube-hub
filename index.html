@@ -1,59 +1,325 @@
-<!DOCTYPE html>
+<!DOCTYPE htm>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>Under Construction</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Brayden Hanninhg YouTube!</title>
+
   <style>
-    html, body {
-      margin: 0;
-      padding: 0;
-      height: 100%;
+    :root{
+      --bg: #0b0b0e;
+      --text: #ffffff;
+      --muted:rgba(255,255,255,.70);
+      --card: rgba(0,0,0,.45);
+      --border: rgba(255,255,255,.14);
+      --accent: #ffd84a;
+      --accent2: #ff4a6a;
+      --radius: 18px;
+      --shadow: 0 18px 50px rgba(0,0,0,.55);
+      --max: 1100px;
     }
 
-    body {
-      font-family: Arial, sans-serif;
+    * { box-sizing: border-box; }
+    html, body { height: 100%; }
+    body{
+      margin:0;
+      font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+      color: var(--text);
+
       background-image:
-        linear-gradient(
-          rgba(0, 0, 0, 0.65),
-          rgba(0, 0, 0, 0.65)
-        ),
-        url("https://yt3.googleusercontent.com/6hLFsUdYmGfNbNFba24HItj2mEMyWPHBP1RtPs58Cp5kyctEsUQ_r9Lqb6hXCNZpyN_ZzVdSjQ=w1707-fcrop64=1,00005a57ffffa5a8-k-c0xffffffff-no-nd-rj");
+        linear-gradient(rgba(0,0,0,.68), rgba(0,0,0,.68)),
+        url("https://github.com/braydenhanning/youtube-hub/blob/main/images/bg/bg%20design%206%20low%20res.jpg?raw=true");
       background-size: cover;
       background-position: center;
       background-repeat: no-repeat;
-
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-      color: #ffffff;
+      background-attachment: fixed;
     }
 
-    .content {
-      padding: 20px;
+    a{ color: inherit; text-decoration: none; }
+    .wrap{ max-width: var(--max); margin: 0 auto; padding: 22px; }
+
+    header{
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      backdrop-filter: blur(14px);
+      background: linear-gradient(to bottom, rgba(0,0,0,.72), rgba(0,0,0,.35));
+      border-bottom: 1px solid rgba(255,255,255,.08);
+    }
+    .nav{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap: 14px;
+      padding: 14px 22px;
+      max-width: var(--max);
+      margin: 0 auto;
+    }
+    .brand{
+      display:flex;
+      flex-direction:column;
+      line-height:1.1;
+    }
+    .navlinks{
+      display:flex;
+      gap: 14px;
+      font-size: .92rem;
+      color: var(--muted);
+      flex-wrap: wrap;
+      justify-content: flex-end;
+    }
+    .navlinks a:hover{ color: #fff;}
+
+    main{ min-height: calc(100vh - 66px); display:flex; align-items:center; }
+      .hero{
+        display: grid;
+        gap: 18px;
+        padding: 26px 0;
+      }
+      @media (min-width: 860px){
+        .hero{ grid-template-columns: 1.2fr 1fr; gap: 22px; }
+      }
+
+       .card{
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
     }
 
-    h1 {
-      font-size: 2.5rem;
-      letter-spacing: 2px;
-      text-transform: uppercase;
-      margin-bottom: 10px;
-      opacity: 0.95;
+    .hero-left{ padding: 22px; }
+    .tag{
+      display:inline-flex;
+      align-items:center;
+      gap: 8px;
+      padding: 7px 10px;
+      border-radius: 999px;
+      border: 1px solid rgba(255,255,255,.16);
+      background: rgba(0,0,0,.25);
+      color: var(--muted);
+      font-size: .82rem;
+      margin-bottom: 14px;
+    }
+    .dot{
+      width: 10px; height: 10px; border-radius: 999px;
+      background: linear-gradient(135deg, var(--accent), var(--accent2));
+      box-shadow: 0 0 16px rgba(255,216,74,.5);
     }
 
-    p {
-      font-size: 1.2rem;
+    h1{
+      margin:0 0 10px;
+      font-size: clamp(2rem, 3vw + 1rem, 3rem);
       letter-spacing: 1px;
-      opacity: 0.85;
+      text-transform: uppercase;
+    }
+    .sub{
+      margin: 0 0 16px;
+      font-size: 1.05rem;
+      color: var(--muted);
+      max-width: 55ch;
+    }
+
+    .btnrow{ display:flex; flex-wrap: wrap; gap: 10px; margin-top: 6px; }
+    .btn{
+      display:inline-flex; align-items:center; justify-content:center;
+      padding: 11px 14px;
+      border-radius: 999px;
+      border: 1px solid rgba(255,255,255,.18);
+      background: rgba(0,0,0,.35);
+      color: #fff;
+      font-weight: 600;
+      transition: transform .12s ease, background .12s ease;
+      cursor: pointer;
+    }
+    .btn:hover{ transform: translateY(-1px); background: rgba(0,0,0,.5); }
+    .btn.primary{
+      border: none;
+      color: #241300;
+      background: linear-gradient(135deg, var(--accent), var(--accent2));
+    }
+
+    /* Right: “Start Here” / Links */
+    .hero-right{ padding: 18px; display:flex; flex-direction:column; gap: 12px; }
+
+    .section-title{
+      font-size: .95rem;
+      color: rgba(255,255,255,.9);
+      letter-spacing: .6px;
+      text-transform: uppercase;
+      margin: 0;
+    }
+
+    .linklist{ display:grid; gap: 10px; margin-top: 6px; }
+    .linkpill{
+      display:flex; align-items:center; justify-content:space-between;
+      padding: 12px 14px;
+      border-radius: 999px;
+      border: 1px solid rgba(255,255,255,.14);
+      background: rgba(0,0,0,.35);
+      color: var(--muted);
+    }
+    .linkpill strong{ color: #fff; font-size: .95rem; font-weight: 600; }
+    .linkpill:hover{ background: rgba(0,0,0,.52); }
+
+    /* Latest videos grid */
+    .below{
+      margin-top: 18px;
+      padding: 16px;
+      text-align: center;
+    }
+    .videos{
+      display:grid;
+      gap: 16px;
+      margin-top: 12px;
+      justify-content: center;
+    }
+    @media (min-width: 860px){
+      .videos{ grid-template-columns: repeat(3, minmax(0, 1fr)); }
+    }
+    .video{
+      padding: 0;
+      border: none;
+      background: transparent;
+    }
+.thumb{
+  width: 100%;
+  max-width: 380px;
+  aspect-ratio: 16 / 9;
+  border-radius: 16px;
+  overflow: hidden;
+  background: transparent;
+  margin: 0 auto 10px;
+  display: block;
+}
+
+    .thumb img{
+      width:100%; height:100%;
+      object-fit: cover;
+      display:block;
+    }
+    .video h3{
+      font-size: .95rem;
+      margin: 0 0 6px;
+    }
+    .video p{
+      margin: 0 0 10px;
+      color: var(--muted);
+      font-size: .88rem;
+    }
+
+    footer{
+      margin-top: 18px;
+      color: rgba(255,255,255,.65);
+      font-size: .85rem;
+      text-align:center;
+      padding: 18px 0 6px;
     }
   </style>
 </head>
+
 <body>
+  <header>
+    <div class="nav">
+      <div class="brand">
+        <strong>Brayden Hanning</strong>
+        <span>Central hub for the channel</span>
+      </div>
 
-  <div class="content">
-    <h1>Under Construction</h1>
-    <p>Big things are coming</p>
-  </div>
+      <nav class="navlinks">
+        <a href="#videos">Videos</a>
+        <a href="#links">Links</a>
+        <a href="#about">About</a>
+      </nav>
+    </div>
+  </header>
 
+  <main>
+    <div class="wrap">
+      <div class="hero">
+        <section class="card hero-left" aria-label="Hero">
+          <div class="tag"><span class="dot"></span> Under construction… but not for long</div>
+          <h1>Under Construction</h1>
+          <p class="sub">Big things are coming. In the meantime, this is the home base for new uploads, playlists, and everything Brayden Hanning.</p>
+
+          <div class="btnrow">
+            <!-- Replace @BraydenHanning with your actual handle if different -->
+            <a class="btn primary" href="https://www.youtube.com/@BraydenHanning" target="_blank" rel="noopener">▶ Watch on YouTube</a>
+            <a class="btn" href="#videos">Latest videos</a>
+            <a class="btn" href="#links">All links</a>
+          </div>
+        </section>
+
+        <aside class="card hero-right" id="links" aria-label="Quick links">
+          <p class="section-title">Start here</p>
+
+          <div class="linklist">
+            <a class="linkpill" href="https://www.youtube.com/@BraydenHanning" target="_blank" rel="noopener">
+              <div>
+                <strong>YouTube Channel</strong><br />
+                <span>All uploads & playlists</span>
+              </div>
+              <span>↗</span>
+            </a>
+
+            <!-- Put your real Discord/social links here when ready -->
+            <a class="linkpill" href="#" onclick="alert('Add your Discord invite link here!'); return false;">
+              <div>
+                <strong>Discord</strong><br />
+                <span>Community hangout</span>
+              </div>
+              <span>↗</span>
+            </a>
+
+            <a class="linkpill" href="#" onclick="alert('Add your Twitter/X or Instagram link here!'); return false;">
+              <div>
+                <strong>Social</strong><br />
+                <span>Updates & extras</span>
+              </div>
+              <span>↗</span>
+            </a>
+          </div>
+        </aside>
+      </div>
+
+      <section class="card below" id="videos" aria-label="Latest videos">
+        <p class="section-title">Latest videos</p>
+
+        <div class="videos">
+          <!-- Swap titles/descriptions whenever you want -->
+          <article class="video">
+            <a class="thumb" href="https://youtu.be/TvlZONqqslY" target="_blank" rel="noopener">
+              <img src="https://i9.ytimg.com/vi_webp/TvlZONqqslY/mqdefault.webp?v=693483d9&sqp=CKy47ckG&rs=AOn4CLDdlEMqakIsIy1EMlNyckabLVfmmQ" alt="Mario Party 2 thumbnail">
+            </a>
+            <h3>Mario Party 2 is Unhinged</h3>
+            <p>Coins were stolen. Friendships were tested. Therapy was considered.</p>
+            <a class="btn btnrow btn primary" href="https://youtu.be/TvlZONqqslY" target="_blank" rel="noopener">Watch</a>
+          </article>
+
+          <article class="video">
+            <a class="thumb" href="https://youtu.be/IYAuofhDOSQ" target="_blank" rel="noopener">
+              <img src="https://i9.ytimg.com/vi_webp/IYAuofhDOSQ/mqdefault.webp?v=692e6041&sqp=CIjE7ckG&rs=AOn4CLCeDBg87FADJHQgQebzSyUbZZf-eA" alt="Super Mario Galaxy thumbnail">
+            </a>
+            <h3>Super Mario Galaxy 1 &amp; 2 Deserve Better</h3>
+            <p>A love letter… and a tiny rant. Okay, a big rant.</p>
+            <a class="btn btnrow btn primary" href="https://youtu.be/IYAuofhDOSQ" target="_blank" rel="noopener">Watch</a>
+          </article>
+
+          <article class="video">
+            <a class="thumb" href="https://youtu.be/_ZdGDyKxwEw" target="_blank" rel="noopener">
+              <img src="https://i9.ytimg.com/vi_webp/_ZdGDyKxwEw/mqdefault.webp?v=6924a33c&sqp=CIS97ckG&rs=AOn4CLBTT8ZiWAMxLc06qIG_JqjX9Dsqag" alt="Xbox 360 thumbnail">
+            </a>
+            <h3>The Xbox 360 Episode</h3>
+            <p>Nostalgia, dashboard sounds, and the faint smell of old controller plastic.</p>
+            <a class="btn btnrow btn primary" href="https://youtu.be/_ZdGDyKxwEw" target="_blank" rel="noopener">Watch</a>
+          </article>
+        </div>
+      </section>
+
+      <section class="wrap" id="about" aria-label="About">
+        <footer>
+          This hub is a work-in-progress. More sections (playlists, schedule, uploads) coming soon.
+        </footer>
+      </section>
+    </div>
+  </main>
 </body>
 </html>
