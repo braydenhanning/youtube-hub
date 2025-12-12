@@ -1,8 +1,10 @@
-<!DOCTYPE htm>
+<!DOCTYPE html>
 <html lang="en">
+<head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Brayden Hanninhg YouTube!</title>
+  <title>Brayden Hanning YouTube!</title>
+
 
   <style>
     :root{
@@ -124,6 +126,20 @@
   display: inline-flex;
 }
 
+.date{
+  margin: 0 0 10px;
+  font-size: 0.85rem;
+  opacity: 0.7;
+}
+
+/* Optional: subtle highlight for the current (middle) video */
+.video.current .thumb{
+  outline: 2px solid rgba(255,255,255,0.35);
+  outline-offset: 3px;
+  border-radius: 16px;
+}
+
+
     .btn{
       display:inline-flex; align-items:center; justify-content:center;
       padding: 11px 14px;
@@ -219,6 +235,36 @@
       text-align:center;
       padding: 18px 0 6px;
     }
+/* Mobile-only reordering: newest first */
+@media (max-width: 859px) {
+
+  /* Stack videos vertically */
+  .videos {
+    grid-template-columns: 1fr;
+  }
+
+  /* Default order */
+  .videos .video {
+    order: 3;
+  }
+
+  /* Current (newest) goes first */
+  .videos .video.current {
+    order: 1;
+  }
+
+  /* Previous goes second */
+  .videos .video:not(.current):not(.upcoming) {
+    order: 2;
+  }
+
+  /* Upcoming stays last */
+  .videos .video.upcoming {
+    order: 4;
+  }
+}
+
+
   </style>
 </head>
 
@@ -293,7 +339,7 @@
 
   <!-- LEFT: Xbox 360 (previous) -->
   <article class="video">
-    <a class="thumb" href="https://youtu.be/_ZdGDyKxwEw" target="_blank">
+    <a class="thumb" href="https://youtu.be/_ZdGDyKxwEw" target="_blank" rel="noopener">
       <img src="https://i9.ytimg.com/vi_webp/_ZdGDyKxwEw/mqdefault.webp?v=6924a33c&sqp=CIS97ckG&rs=AOn4CLBTT8ZiWAMxLc06qIG_JqjX9Dsqag" alt="Xbox 360">
     </a>
     <h3>The Xbox 360 Episode</h3>
@@ -310,13 +356,14 @@
   </article>
 
   <!-- RIGHT: LEGO Games (upcoming) -->
-  <article class="video upcoming">
-    <div class="thumb">
-      <img src="https://github.com/braydenhanning/youtube-hub/blob/main/images/teaser%20thumbnail.jpg?raw=true" alt="LEGO Games">
-    </div>
-    <h3>LEGO Games Retrospective</h3>
-    <p class="date">Dec 13th, 2025</p>
-  </article>
+<article class="video upcoming">
+  <a class="thumb" href="https://www.youtube.com/@BraydenHanning" target="_blank" rel="noopener">
+    <img src="https://github.com/braydenhanning/youtube-hub/blob/main/images/teaser%20thumbnail.jpg?raw=true" alt="LEGO Games">
+  </a>
+  <h3>LEGO Games Retrospective</h3>
+  <p class="date">Dec 13th, 2025</p>
+</article>
+
 
 </div>
 
