@@ -331,12 +331,10 @@ footer{
   padding: 18px 0 6px;
 }
 
-/* Mobile-only reordering: newest first */
 @media (max-width: 859px) {
   .videos { grid-template-columns: 1fr; }
 
-  .videos .video { order: 3; }
-  .videos .video.current { order: 1; }
-  .videos .video:not(.current):not(.upcoming) { order: 2; }
-  .videos .video.upcoming { order: 4; }
+  .videos .video.current { order: 2; }
+  .videos .video:not(.current):not(.upcoming) { order: 3; } /* previous */
+  .videos .video.upcoming { order: 1; }                     /* upcoming */
 }
