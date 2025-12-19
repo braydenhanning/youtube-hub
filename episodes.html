@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Episode Guide | Brayden Hanning</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+  <header>
+    <div class="nav">
+ <a href="index.html" class="brand">
+  <strong>Brayden Hanning</strong>
+  <span>Episode guide</span>
+</a>
+
+
+      <nav class="navlinks">
+        <a href="index.html#videos">Videos</a>
+        <a href="episodes.html">Episodes</a>
+        <a href="index.html#links">Links</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <div class="wrap">
+
+      <section class="below" aria-label="Episode Guide">
+        <p class="section-title">All Episodes</p>
+
+        <!-- Season picker -->
+        <div class="btnrow" style="justify-content:center; margin-bottom: 14px;">
+          <button class="btn" data-season="all">All</button>
+          <button class="btn" data-season="1">Season 1</button>
+          <button class="btn" data-season="2">Season 2</button>
+          <button class="btn" data-season="3">Season 3</button>
+        </div>
+
+        <!-- Episodes list -->
+        <div class="episodes">
+
+          <!-- Example episode card -->
+          <article class="episode card" data-season="3">
+            <a class="thumb" href="https://youtu.be/jg2xEsqZpdg" target="_blank" rel="noopener">
+              <img src="https://i9.ytimg.com/vi/jg2xEsqZpdg/mqdefault_custom_1.jpg?v=6940b097&sqp=CJitl8oG&rs=AOn4CLChTkGpOdn_wlM2kFn0elS4bLJy0g" alt="Episode thumbnail">
+            </a>
+
+            <div class="episode-meta">
+              <h3>The Rise and Fall of LEGO Games</h3>
+              <p class="date">Dec 15th, 2025</p>
+              <p class="synopsis">Let's hop in and take a look throughout the history of LEGO and where it all went wrong.</p>
+              <a class="btn" href="https://youtu.be/jg2xEsqZpdg" target="_blank" rel="noopener">Watch</a>
+            </div>
+          </article>
+		  
+		  <article class="episode card" data-season="3">
+            <a class="thumb" href="https://youtu.be/TvlZONqqslY" target="_blank" rel="noopener">
+              <img src="https://i9.ytimg.com/vi_webp/TvlZONqqslY/mqdefault.webp?v=693cf5cb&sqp=CJitl8oG&rs=AOn4CLB-4mSdBWs42yMJUKVZpN8sAcaA8Q" alt="Episode thumbnail">
+            </a>
+
+            <div class="episode-meta">
+              <h3>Mario Party 2 Ruined My Weekend</h3>
+              <p class="date">Dec 6th, 2025</p>
+              <p class="synopsis">I go through and experience Mario Party 2's chaos filled gameplay first hand.</p>
+              <a class="btn" href="https://youtu.be/TvlZONqqslY" target="_blank" rel="noopener">Watch</a>
+            </div>
+          </article>
+		  
+		  		  <article class="episode card" data-season="3">
+            <a class="thumb" href="https://youtu.be/_ZdGDyKxwEw" target="_blank" rel="noopener">
+              <img src="https://i9.ytimg.com/vi_webp/_ZdGDyKxwEw/mqdefault.webp?v=6924a33c&sqp=CJitl8oG&rs=AOn4CLA1-IfcadfHiQ51TidNg0shuhLHpQ" alt="Episode thumbnail">
+            </a>
+
+            <div class="episode-meta">
+              <h3>The Xbox 360 Was Peak Chaos</h3>
+              <p class="date">Nov 24th, 2025</p>
+              <p class="synopsis">this is the retrospective episode going through and looking at the history of xbox 360 and how it influenced the future of gaming.</p>
+              <a class="btn" href="https://youtu.be/_ZdGDyKxwEw" target="_blank" rel="noopener">Watch</a>
+            </div>
+          </article>
+
+        </div>
+      </section>
+
+      <footer>
+        <p style="margin-top: 8px; font-size: 0.75rem; opacity: 0.6;">
+          © 2021-2026 Brayden Hanning.<br>
+          All trademarks and copyrights belong to their respective owners.
+        </p>
+      </footer>
+
+    </div>
+  </main>
+
+  <script src="episodes.js"></script>
+</body>
+</html>
