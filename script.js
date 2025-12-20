@@ -9,6 +9,20 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
+document.addEventListener("DOMContentLoaded", () => {
+  const isHome =
+    location.pathname.endsWith("index.html") ||
+    location.pathname === "/" ||
+    location.pathname === "";
+
+  const cornerLogo = document.querySelector(".corner-logo");
+
+  if (cornerLogo && !isHome) {
+    cornerLogo.style.display = "block";
+  }
+});
+
+
   if (social) {
     social.addEventListener("click", (e) => {
       e.preventDefault();
